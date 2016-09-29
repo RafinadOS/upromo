@@ -1,5 +1,9 @@
 $(document).ready(function() {
-	setTimeout(function(){
-		$('body').addClass('fly');
-	}, 2000)
+	$('.menu-show__click').click(function(){
+		$('body').toggleClass('show-sidebar');
+	})
+
+	$('.wrapper').click(function() {
+		$('body').attr('class', 'asd');
+	});
 });

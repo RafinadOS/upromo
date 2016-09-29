@@ -113,6 +113,7 @@ header {
 .wrapper {
 	max-width: 900px;
 	margin: auto;
+	.transition(.3s);
 }
 
 .content {
@@ -239,8 +240,81 @@ header {
 	margin: 5px 0 0 0;
 }
 
+.menu-show {
+	position: absolute;
+	width: 20px;
+	height: 26px;
+	border: 3px solid transparent;
+	height: 4px;
+	right: -29px;
+	top: 8px;
+	cursor: pointer;
+	background: @colorDef;
+	border: 0 solid @colorDef;
+	.radius();
+	.transition(.3s);
+	&:before,&:after {
+		position: absolute;
+		content: '';
+		width: 20px;
+		height: 4px;
+		background: @colorDef;
+		margin: 0;
+		top: 0;
+		left: 0;
+		.radius();
+		.transition(.3s);
+	}
+	&:before {
+		top: 7px;
+	}
+	&:after {
+		top: 14px;
+	}
+	&__click {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 0;
+		left: 0;
+		z-index: 9;
+	}
+}
+
+.show-sidebar .menu-show {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	border: 3px solid @colorDef;
+	right: -29px;
+	top: 3px;
+	cursor: pointer;
+	background: transparent;
+	.radius(100%);
+	&:before,&:after {
+		width: 14px;
+		margin: -2px 0 0 -7px;
+		top: 50%;
+		left: 50%;
+	}
+	&:before {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	&:after {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+}
+
 @media (max-width: 900px) {
+	header {
+		height: 0;
+	}
 	.header {
+		overflow: visible;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -248,6 +322,10 @@ header {
 		width: 200px;
 		background: @colorDef;
 		z-index: 999;
+		-webkit-transform: translate(-200px,0);
+		-moz-transform: translate(-200px,0);
+		transform: translate(-200px,0);
+		.transition(.3s);
 		&:before {
 			content: '';
 			position: absolute;
@@ -260,6 +338,33 @@ header {
 			background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
 			background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+		}
+	}
+	.show-sidebar .header {
+		-webkit-transform: translate(0,0);
+		-moz-transform: translate(0,0);
+		transform: translate(0,0);
+	}
+	.show-sidebar {
+		overflow: hidden;
+		height: 100vh;
+
+		& .wrapper {
+			height: 100vh;
+			opacity: .2;
+			-webkit-transform: translate(200px,0);
+			-moz-transform: translate(200px,0);
+			transform: translate(200px,0);
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 99;
+			}
 		}
 	}
 	.topmenu {
@@ -275,6 +380,9 @@ header {
 				margin: 0 10px;
 				padding: 0 0 10px 0;
 				border-bottom: 1px solid lighten(@colorDef, 5%);
+				&:hover {
+					color: #fff;
+				}
 			}
 		}
 	}

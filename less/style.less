@@ -12,6 +12,13 @@
 @colorDef:          #e74c3c;
 @colorText:			#2f3c4e;
 
+::selection {
+background: lighten(@colorDef, 35%) /* Safari */
+}
+::-moz-selection {
+background: lighten(@colorDef, 35%) /* Firefox */
+}
+
 
 a {
 	color: @colorDef;
@@ -661,8 +668,10 @@ header {
 			& a {
 				color: #fff;
 				line-height: 25px;
-				font-size: 16px;
-				font-weight: normal;
+				font-size: 18px;
+				letter-spacing: 2px;
+				font-weight: 300;
+				text-transform: none;
 				margin: 0 10px;
 				padding: 0 0 10px 0;
 				border-bottom: 1px solid lighten(@colorDef, 5%);

@@ -117,6 +117,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+::selection {
+  background: #fbdedb /* Safari */;
+}
+::-moz-selection {
+  background: #fbdedb /* Firefox */;
+}
 a {
   color: #e74c3c;
   text-decoration: none;
@@ -796,8 +802,10 @@ header {
   .topmenu__item a {
     color: #fff;
     line-height: 25px;
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: none;
     margin: 0 10px;
     padding: 0 0 10px 0;
     border-bottom: 1px solid #ea6153;

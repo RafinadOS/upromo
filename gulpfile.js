@@ -3,7 +3,8 @@ var   gulp = require('gulp'),
       livereload = require('gulp-livereload'),
       connect = require('gulp-connect'),
       path = require('path'),
-      less = require('gulp-less');
+      less = require('gulp-less'),
+      rigger = require('gulp-rigger');
 
 // for livereload pipe
 gulp.task('connect', function() {
@@ -24,6 +25,7 @@ gulp.task('concat-css', function () {
 // move html files to app folder
 gulp.task('html', function() {
    gulp.src('*.html')
+   .pipe(rigger())
    .pipe(gulp.dest('app'))
    .pipe(connect.reload());
 });
@@ -77,22 +79,11 @@ gulp.task('fonts', function() {
 gulp.task('watch', function() {
    gulp.watch('css/*.css', ['concat-css'])
    gulp.watch('*.html', ['html'])
-   gulp.watch('img/*.jpg', ['img'])
-   gulp.watch('img/*.png', ['img'])
-   gulp.watch('img/*.gif', ['img'])
-   gulp.watch('img/favicon/*.jpg', ['favicon'])
-   gulp.watch('img/favicon/*.xml', ['favicon'])
-   gulp.watch('img/favicon/*.png', ['favicon'])
-   gulp.watch('img/favicon/*.ico', ['favicon'])
-   gulp.watch('img/favicon/*.json', ['favicon'])
-   gulp.watch('images/*.jpg', ['img2'])
-   gulp.watch('images/*.png', ['img2'])
-   gulp.watch('images/*.gif', ['img2'])
-   gulp.watch('fonts/*.ttf', ['fonts'])
-   gulp.watch('fonts/*.woff', ['fonts'])
-   gulp.watch('fonts/*.woff2', ['fonts'])
-   gulp.watch('fonts/*.svg', ['fonts'])
-   gulp.watch('fonts/*.eot', ['fonts'])
+   gulp.watch('template/*.html', ['html'])
+   gulp.watch('img/*.*', ['img'])
+   gulp.watch('img/favicon/*.*', ['favicon'])
+   gulp.watch('images/*.*', ['img2'])
+   gulp.watch('fonts/*.*', ['fonts'])
    gulp.watch('less/*.less', ['less'])
    gulp.watch('js/*.js', ['js'])
 });

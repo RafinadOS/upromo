@@ -13,8 +13,9 @@ $(document).ready(function() {
 
 		if(($(valInput).val()) == '') {
 			$(valInput).addClass('error')
-		} else {
-			$(valInput).removeClass('error')
+			setTimeout(function(){
+				$(valInput).removeClass('error')
+			}, 400)()
 		}
 	});
 });

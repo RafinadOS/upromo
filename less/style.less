@@ -761,3 +761,27 @@ header {
 		}
 	}
 }
+
+.error {
+	-webkit-animation: drag .3s 2 linear;
+	animation: drag .3s 2 linear;
+}
+
+@keyframes drag {
+	0,
+	100% {
+		transform: translate(-2px,0);
+	}
+	20% {
+		transform: translate(2px,0);
+	}
+	40% {
+		transform: translate(-2px,0);
+	}
+	60% {
+		transform: translate(2px,0);
+	}
+	80% {
+		transform: translate(-2px,0);
+	}
+}

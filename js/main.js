@@ -7,4 +7,7 @@ $(document).ready(function() {
 		$('body').attr('class', '')
 	})
 
+	$('.subscribe__button').click(function() {
+		/* Act on the event */
+	});
 });

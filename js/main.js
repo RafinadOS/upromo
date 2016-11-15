@@ -1,21 +1,21 @@
 $(document).ready(function() {
-	$('.menu-show__click').click(function(){
-		$('body').toggleClass('show-sidebar')
-	})
-	
-	$('.wrapper').click(function(){
-		$('body').attr('class', '')
-	})
 
-	$('.validate').click(function() {
-		var valButton	= $(this).attr('for'),
-			valInput	= $('#'+valButton);
+	function itemWidth(){
+		var contentWidth = $('.content').width();
+		var itemWidth = contentWidth / 280;
+		var itemWidthSet = contentWidth / (itemWidth ^ 0);
+		$('.item').width(itemWidthSet);
+		console.log(contentWidth);
+	};
 
-		if(($(valInput).val()) == '') {
-			$(valInput).addClass('error')
-			setTimeout(function(){
-				$(valInput).removeClass('error')
-			}, 400)()
-		}
+	itemWidth();
+
+	$('.content').masonry({
+		itemSelector: '.item'
 	});
+
+
+	
+
+
 });

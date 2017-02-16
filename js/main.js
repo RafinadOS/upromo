@@ -1,20 +1,26 @@
+$(document).ready(function($) {
+	
 
-	function itemWidth(){
-		var contentWidth = $('.content').width();
-		var itemWidth = contentWidth / 280;
-		var itemWidthSet = contentWidth / (itemWidth ^ 0);
-		$('.item').width(itemWidthSet);
-	};
+	$('.owl-carousel').owlCarousel({
+	    loop: true,
+	    margin: 0,
+	    responsiveClass: true,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        },
+	        600:{
+	            items:3,
+	            nav:false
+	        },
+	        1000:{
+	            items:5,
+	            nav:true,
+	            loop:false
+	        }
+	    }
+	});
 
-	itemWidth();
 
-	function popUpWindow(){
-
-		console.log(this)
-
-	}
-
-
-	// document.querySelectorAll('[data-role="tooltip"]').click('click', popUpWindow, false)
-
-
+});

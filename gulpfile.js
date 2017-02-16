@@ -42,21 +42,21 @@ gulp.task('less', function () {
 
 // move images for styles
 gulp.task('img', function() {
-   return gulp.src(['img/*.jpg','img/*.png','img/*.svg','img/*.gif'])
+   return gulp.src(['img/*.*'])
    .pipe(gulp.dest('app/img/'))
    .pipe(connect.reload())
 });
 
 // move images for conten
 gulp.task('img2', function() {
-   return gulp.src(['images/*.jpg','images/*.png','images/*.svg','images/*.gif'])
+   return gulp.src(['images/*.*'])
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
 
 // move favicons
 gulp.task('favicon', function() {
-   return gulp.src([	'img/favicon/*.jpg','img/favicon/*.xml','img/favicon/*.png','img/favicon/*.ico','img/favicon/*.json',])
+   return gulp.src([	'img/favicon/*.*',])
    .pipe(gulp.dest('app/img/favicon/'))
    .pipe(connect.reload())
 });
@@ -70,7 +70,7 @@ gulp.task('js', function() {
 
 // move fonts
 gulp.task('fonts', function() {
-   return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.woff2','fonts/*.svg','fonts/*.eot'])
+   return gulp.src([	'fonts/*.*'])
    .pipe(gulp.dest('app/fonts/'))
    .pipe(connect.reload())
 });

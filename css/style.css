@@ -395,3 +395,79 @@ body {
 .slider__wrapper .owl-next:hover {
   opacity: 1;
 }
+.location {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  padding: 50px 0 0 0;
+}
+footer {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  background: #1f2123;
+}
+.footer {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 920px;
+  margin: auto;
+  color: #fff;
+  padding: 25px 0;
+}
+.footer__contacts {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+}
+.footer__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+.social {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 10px 0 10px 20px;
+  border-left: 2px solid #2a2c2e;
+  margin: 0 0 0 50%;
+}
+.social__item {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
+  margin: 0 0 7px 0;
+  text-decoration: none;
+}
+.social__item:last-child {
+  margin: 0;
+}
+.social__item:hover {
+  text-decoration: none !important;
+}
+.social__item:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px 0 0;
+  background: url('../images/social.png') no-repeat;
+}
+.social__item-vk:before {
+  background-position: 0 0 !important;
+}
+.social__item-vk:hover:before {
+  background-position: right 0!important;
+}
+.social__item-fb:before {
+  background-position: 0 bottom !important;
+}
+.social__item-fb:hover:before {
+  background-position: -27px bottom !important;
+}

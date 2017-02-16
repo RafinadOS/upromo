@@ -1,6 +1,8 @@
 @import "_reset.less";
 @import "_fonts.less";
 
+@width: 		920px;
+
 ::selection {}
 ::-moz-selection {}
 
@@ -245,6 +247,83 @@ html,body {
 			&:hover {
 				opacity: 1;
 			}
+		}
+	}
+}
+
+.location {
+	.clear();
+	overflow: hidden;
+	padding: 50px 0 0 0;
+}
+
+footer {
+	.clear();
+	overflow: hidden;
+	background: #1f2123;
+}
+
+.footer {
+	.clear();
+	overflow: hidden;
+	width: @width;
+	margin: auto;
+	color: #fff;
+	padding: 25px 0;
+	&__contacts {
+		display: inline-block;
+		vertical-align: middle;
+		overflow: hidden;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+	}
+}
+
+.social {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	padding: 10px 0 10px 20px;
+	border-left: 2px solid #2a2c2e;
+	margin: 0 0 0 50%;
+	&__item {
+		display: inline-block;
+		line-height: 24px;
+		font-size: 14px;
+		color: #fff;
+		margin: 0 0 7px 0;
+		text-decoration: none;
+		&:last-child {
+			margin: 0;
+		}
+		&:hover {
+			text-decoration: none !important;
+		}
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 24px;
+			height: 24px;
+			margin: 0 10px 0 0;
+			background: url('../images/social.png') no-repeat;
+		}
+		&-vk:before {
+			background-position: 0 0 !important;
+		}
+		&-vk:hover:before {
+			background-position: right 0!important;
+		}
+		&-fb:before {
+			background-position: 0 bottom !important;
+		}
+		&-fb:hover:before {
+			background-position: -27px bottom!important;
 		}
 	}
 }

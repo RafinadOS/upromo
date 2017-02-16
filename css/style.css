@@ -334,6 +334,7 @@ body {
   text-align: center;
   padding: 280px 0 95px 0;
   font-size: 48px !important;
+  line-height: normal !important;
   color: #fff;
   font-weight: 300;
   text-transform: uppercase;
@@ -470,4 +471,100 @@ footer {
 }
 .social__item-fb:hover:before {
   background-position: -27px bottom !important;
+}
+@media (max-width: 1160px) {
+  .wrapper {
+    width: auto;
+    margin: 0 20px;
+  }
+}
+@media (max-width: 960px) {
+  .footer,
+  .content {
+    width: auto;
+    margin: 0 20px;
+  }
+  .slider__container {
+    width: auto;
+    margin: 0 20px;
+  }
+  .social {
+    float: right;
+    margin: 15px 0 0 0;
+  }
+}
+.menu-show {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+@media (max-width: 780px) {
+  .h1 {
+    font-size: 28px;
+    margin: 0 0 30px 0;
+  }
+  .container {
+    padding: 30px 0;
+    background-position: center bottom -100px;
+  }
+  .container__bottom {
+    font-size: 28px !important;
+    padding: 60px 0 20px 0;
+  }
+  .contacts {
+    padding: 30px 0 0 0;
+  }
+  .menu-show {
+    display: block;
+    z-index: 999;
+  }
+  .unheader {
+    position: fixed;
+    width: 260px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transform: translateX(-260px);
+    -moz-transform: translateX(-260px);
+    transform: translateX(-260px);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 999;
+    background: #f6f9fb url('../images/shadow.png') right center repeat-y;
+  }
+  .show-menu .unheader {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .show-menu {
+    height: 100vw;
+    overflow: hidden;
+  }
+  .show-menu:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #fff;
+    opacity: .8;
+    z-index: 99;
+  }
+  .over {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .show-menu .over {
+    -webkit-transform: translateX(260px);
+    -moz-transform: translateX(260px);
+    transform: translateX(260px);
+  }
 }

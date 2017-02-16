@@ -12,14 +12,19 @@ $(document).ready(function($) {
 	        },
 	        600:{
 	            items:3,
-	            nav:false
+	            nav:true
 	        },
 	        1000:{
 	            items:5,
-	            nav:true,
-	            loop:false
+	            loop:false,
+	            nav:true
 	        }
 	    }
+	});
+
+	$('.tcon-menu--xbutterfly').click(function() {
+		$(this).toggleClass('tcon-transform');
+		$('body').toggleClass('show-menu');
 	});
 
 

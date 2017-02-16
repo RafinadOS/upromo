@@ -1,7 +1,8 @@
 @import "_reset.less";
 @import "_fonts.less";
 
-@width: 		920px;
+@width920: 		920px;
+@width: 		auto;
 
 ::selection {}
 ::-moz-selection {}
@@ -193,6 +194,7 @@ html,body {
 		text-align: center;
 		padding: 280px 0 95px 0;
 		font-size: 48px !important;
+		line-height: normal !important;
 		color: #fff;
 		font-weight: 300;
 		text-transform: uppercase;
@@ -201,7 +203,7 @@ html,body {
 
 .content {
 	.clear();
-	width: 920px;
+	width: @width920;
 	margin: auto;
 }
 
@@ -210,7 +212,7 @@ html,body {
 	padding: 60px 0 0 0;
 	&__container {
 		.clear();
-		width: 920px;
+		width: @width920;
 		margin: auto;
 	}
 	&__wrapper {
@@ -266,7 +268,7 @@ footer {
 .footer {
 	.clear();
 	overflow: hidden;
-	width: @width;
+	width: @width920;
 	margin: auto;
 	color: #fff;
 	padding: 25px 0;
@@ -325,5 +327,106 @@ footer {
 		&-fb:hover:before {
 			background-position: -27px bottom!important;
 		}
+	}
+}
+
+
+@margin20: 		0 20px;
+
+@media(max-width: 1160px) {
+	.wrapper {
+		width: @width;
+		margin: @margin20;
+	}
+}
+
+@media(max-width: 960px) {
+	.footer,
+	.content {
+		width: @width;
+		margin: @margin20;
+	}
+	.slider {
+		&__container {
+			width: @width;
+			margin: @margin20;		
+		}
+	}
+	.social {
+		float: right;
+		margin: 15px 0 0 0;
+	}
+}
+
+.menu-show {
+	display: none;
+	position: fixed;
+	right: 20px;
+	top: 10px;
+}
+
+@media(max-width: 780px) {
+	.h1 {
+		font-size: 28px;
+		margin: 0 0 30px 0;
+	}
+	.container {
+		padding: 30px 0;
+		background-position: center bottom -100px;
+		&__bottom {
+			font-size: 28px !important;
+			padding: 60px 0 20px 0;
+		}
+	}
+	.contacts {
+		padding: 30px 0 0 0;
+	}
+	.menu-show {
+		display: block;
+		z-index: 999;
+	}
+	.unheader {
+		position: fixed;
+		width: 260px;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		-webkit-transform: translateX(-260px);
+		-moz-transform: translateX(-260px);
+		transform: translateX(-260px);
+		.transition(.3s);
+		z-index: 999;
+		background: #f6f9fb url('../images/shadow.png') right center repeat-y;
+	}
+	.show-menu .unheader {
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		transform: translateX(0);
+	}
+	.show-menu {
+		height: 100vw;
+		overflow: hidden;
+		&:before {
+			content: '';
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			background: #fff;
+			opacity: .8;
+			z-index: 99;
+		} 
+	}
+	.over {
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		transform: translateX(0);
+		.transition(.3s);
+	}
+	.show-menu .over {
+		-webkit-transform: translateX(260px);
+		-moz-transform: translateX(260px);
+		transform: translateX(260px);
 	}
 }
